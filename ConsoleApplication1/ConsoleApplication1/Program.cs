@@ -10,6 +10,7 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(Equation(2));
         }
         public static bool IsOdd(int n)
         {
@@ -82,6 +83,31 @@ namespace ConsoleApplication1
                 if(n<0)
                     return (int)n - 1;
             return (int)n;
+        }
+        public static int Rand1()
+        {
+            Random r = new Random();
+            return r.Next(0, (int)Pow(2, 31)-1);
+        }
+        //public static float Rand2()
+        //{
+            //Random r=new Random();
+           // return r.Next(((float)0), (float)1);
+
+        //}
+        public static int Factorial(long n)
+        {
+            int f = 1;
+            for (int i = 1; i <= n; i++)
+                f *= i;
+            return f;
+        }
+        public static double Equation(double x)
+        {
+            double sinx = 0;
+            for (int i = 0; i <= x; i++)
+                sinx += Pow(-1, i) * (Pow(x, 2 * i + 1) / Factorial(2 * i + 1));
+            return sinx;
         }
     }
 }
