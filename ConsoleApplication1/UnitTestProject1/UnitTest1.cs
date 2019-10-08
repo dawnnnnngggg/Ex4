@@ -87,11 +87,83 @@ namespace UnitTestProject1
             Assert.AreEqual(24, result1);
         }
 
+        //[TestMethod]
+        //public void TestEquation()
+        //{
+        //    double result1 = Program.Equation(2);
+        //    Assert.AreEqual(Math.Sin(2), result1);
+        //}
         [TestMethod]
-        public void TestEquation()
+        public void TestIsContains5()
         {
-            double result1 = Program.Equation(2);
-            Assert.AreEqual(Math.Sin(2), result1);
+            int[] arr1 = new int[] { 1, 2, 3, 4, 5 };
+            bool result1 = Program.IsContains5(arr1);
+            Assert.AreEqual(true, result1);
+            int[] arr2 = new int[] { 6, 7, 8, 9 };
+            bool result2 = Program.IsContains5(arr2);
+            Assert.AreEqual(false, result2);
+        }
+        [TestMethod]
+        public void TestIsContains5or6()
+        {
+            int[] arr4 = new[] { 1, 2, 3, 4, 5, 6 };
+            bool result1 = Program.IsContains5or6(arr4);
+            Assert.AreEqual(true, result1);
+            int[] arr5 = new[] { 7, 8, 9, 1, 2, 5 };
+            bool result2 = Program.IsContains5or6(arr5);
+            Assert.AreEqual(true, result2);
+            int[] arr7 = new[] { 6, 4, 7, 8, 9, 2 };
+            bool result4 = Program.IsContains5or6(arr7);
+            Assert.AreEqual(true, result4);
+            int[] arr6 = new[] { 8, 9, 10, 1, 2 };
+            bool result3 = Program.IsContains5or6(arr6);
+            Assert.AreEqual(false, result3);
+        }
+        [TestMethod]
+        public void TestIsContains5and6()
+        {
+            int[] arr4 = new[] { 1, 2, 3, 4, 5, 6 };
+            bool result1 = Program.IsContains5and6(arr4);
+            Assert.AreEqual(true, result1);
+            int[] arr5 = new[] { 7, 8, 9, 1, 2, 5 };
+            bool result2 = Program.IsContains5and6(arr5);
+            Assert.AreEqual(false, result2);
+            int[] arr7 = new[] { 6, 4, 7, 8, 9, 2 };
+            bool result4 = Program.IsContains5and6(arr7);
+            Assert.AreEqual(false, result4);
+            int[] arr6 = new[] { 8, 9, 10, 1, 2 };
+            bool result3 = Program.IsContains5and6(arr6);
+            Assert.AreEqual(false, result3);
+        }
+        [TestMethod]
+        public void TestCount5()
+        {
+            int[] arr4 = new[] { 1, 2, 3, 4, 5, 6 };
+            int result1 = Program.Count5(arr4);
+            Assert.AreEqual(1, result1);
+            int[] arr5 = new[] { 7, 8, 9, 1, 2 };
+            int result2 = Program.Count5(arr5);
+            Assert.AreEqual(0, result2);
+        }
+        [TestMethod]
+        public void TestCount5or6()
+        {
+            int[] arr4 = new[] { 1, 2, 3, 4, 5, 6 };
+            int result1 = Program.Count5or6(arr4);
+            Assert.AreEqual(2, result1);
+            int[] arr5 = new[] { 7, 8, 9, 1, 2 };
+            int result2 = Program.Count5or6(arr5);
+            Assert.AreEqual(0, result2);
+            int[] arr6 = new[] { 7, 8, 9, 1, 2, 5 };
+            int result3 = Program.Count5or6(arr6);
+            Assert.AreEqual(1, result3);
+        }
+        [TestMethod]
+        public void TestSum()
+        {
+            int[] arr4 = new[] { 1, 2, 3, 4, 5, 6 };
+            int result1 = Program.Sum(arr4);
+            Assert.AreEqual(21, result1);
         }
     }
 }
